@@ -10,15 +10,15 @@
 A human being still wandering in which specialisation I would fall in love with (Machine Learning or BlockChain or Software Development or Data Scientist), yet have an ever-lasting love for programming and fonts on a black screen. I like to learn and explore new technologies. I possess proven communication skills and a strong work ethic. In my spare time I'm interested in tech, AI, Gaming, Football, and Cooking.
 
 <!--START_SECTION:waka-->
-![Profile Views](http://img.shields.io/badge/Profile%20Views-1-blue)
+![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-23.1%20million%20lines%20of%20code-blue)
 
 **I'm a Night 🦉** 
 
 ```text
-🌞 Morning    35 commits     ████░░░░░░░░░░░░░░░░░░░░░   19.44% 
-🌆 Daytime    25 commits     ███░░░░░░░░░░░░░░░░░░░░░░   13.89% 
-🌃 Evening    93 commits     █████████████░░░░░░░░░░░░   51.67% 
-🌙 Night      27 commits     ███░░░░░░░░░░░░░░░░░░░░░░   15.0%
+🌞 Morning    35 commits     ████░░░░░░░░░░░░░░░░░░░░░   19.34% 
+🌆 Daytime    25 commits     ███░░░░░░░░░░░░░░░░░░░░░░   13.81% 
+🌃 Evening    93 commits     ████████████░░░░░░░░░░░░░   51.38% 
+🌙 Night      28 commits     ███░░░░░░░░░░░░░░░░░░░░░░   15.47%
 
 ```
 
