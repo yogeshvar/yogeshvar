@@ -35,6 +35,4 @@ JSON                     1 min               ░░░░░░░░░░░�
 
 ```
 
-
- Last Updated on 15/08/2021
 <!--END_SECTION:waka-->
