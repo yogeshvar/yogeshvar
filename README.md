@@ -27,7 +27,7 @@ A human being still wandering in which specialisation I would fall in love with 
 
 ```text
 💬 Programming Languages: 
-Markdown                 45 mins             █████████████████████████   100.0%
+Markdown                 23 mins             █████████████████████████   100.0%
 
 ```
 
