@@ -10,15 +10,15 @@ A human being still wandering in which specialisation I would fall in love with 
 ## 🛠 When & What do I code ?  
 
 <!--START_SECTION:waka-->
-![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-79351%20lines%20of%20code-blue)
+![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-79375%20lines%20of%20code-blue)
 
 **I'm a Night 🦉** 
 
 ```text
-🌞 Morning    17 commits     ███░░░░░░░░░░░░░░░░░░░░░░   11.81% 
-🌆 Daytime    16 commits     ██░░░░░░░░░░░░░░░░░░░░░░░   11.11% 
-🌃 Evening    77 commits     █████████████░░░░░░░░░░░░   53.47% 
-🌙 Night      34 commits     ██████░░░░░░░░░░░░░░░░░░░   23.61%
+🌞 Morning    17 commits     ██░░░░░░░░░░░░░░░░░░░░░░░   10.43% 
+🌆 Daytime    31 commits     ████░░░░░░░░░░░░░░░░░░░░░   19.02% 
+🌃 Evening    81 commits     ████████████░░░░░░░░░░░░░   49.69% 
+🌙 Night      34 commits     █████░░░░░░░░░░░░░░░░░░░░   20.86%
 
 ```
 
@@ -36,5 +36,5 @@ JavaScript               5 mins              ░░░░░░░░░░░�
 ```
 
 
- Last Updated on 01/11/2021
+ Last Updated on 02/11/2021
 <!--END_SECTION:waka-->
