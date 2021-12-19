@@ -27,7 +27,7 @@ A human being still wandering in which specialisation I would fall in love with 
 
 ```text
 💬 Programming Languages: 
-No Activity Tracked This Week
+Java                     0 secs              █████████████████████████   100.0%
 
 ```
 
