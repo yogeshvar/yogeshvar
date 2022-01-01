@@ -10,6 +10,8 @@ A human being still wandering in which specialisation I would fall in love with 
 ## 🛠 When & What do I code ?  
 
 <!--START_SECTION:waka-->
+![Code Time](http://img.shields.io/badge/Code%20Time-1%2C209%20hrs%2049%20mins-blue)
+
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-101%20Thousand%20lines%20of%20code-blue)
 
 **I'm a Night 🦉** 
@@ -27,11 +29,11 @@ A human being still wandering in which specialisation I would fall in love with 
 
 ```text
 💬 Programming Languages: 
-Java                     1 hr 27 mins        ██████████████░░░░░░░░░░░   57.92% 
-JavaScript               1 hr 2 mins         ██████████░░░░░░░░░░░░░░░   41.78% 
-JSON                     0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   0.24% 
-TypeScript               0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   0.03% 
-JSX                      0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   0.03%
+Java                     1 hr 27 mins        ██████████████░░░░░░░░░░░   56.07% 
+JavaScript               1 hr 7 mins         ███████████░░░░░░░░░░░░░░   43.52% 
+JSON                     0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   0.25% 
+HTML                     0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   0.11% 
+TypeScript               0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   0.03%
 
 ```
 
