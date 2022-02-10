@@ -10,8 +10,6 @@ A human being still wandering in which specialisation I would fall in love with 
 ## 🛠 When & What do I code ?  
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-1%2C226%20hrs%2052%20mins-blue)
-
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-101%20Thousand%20lines%20of%20code-blue)
 
 **I'm a Night 🦉** 
@@ -34,5 +32,5 @@ No Activity Tracked This Week
 ```
 
 
- Last Updated on 09/02/2022 19:19:26 UTC
+ Last Updated on 10/02/2022 18:47:37 UTC
 <!--END_SECTION:waka-->
