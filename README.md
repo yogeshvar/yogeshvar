@@ -10,7 +10,7 @@ A human being still wandering in which specialisation I would fall in love with 
 ## 🛠 When & What do I code ?  
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-1%2C453%20hrs%2048%20mins-blue)
+![Code Time](http://img.shields.io/badge/Code%20Time-1%2C454%20hrs%205%20mins-blue)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-6%20Million%20lines%20of%20code-blue)
 
@@ -38,5 +38,5 @@ Text                     3 hrs 5 mins        █░░░░░░░░░░�
 ```
 
 
- Last Updated on 10/05/2022 19:10:40 UTC
+ Last Updated on 10/05/2022 19:13:33 UTC
 <!--END_SECTION:waka-->
