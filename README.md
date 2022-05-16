@@ -10,7 +10,7 @@ A human being still wandering in which specialisation I would fall in love with 
 ## 🛠 When & What do I code ?  
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-0%20secs-blue)
+![Code Time](http://img.shields.io/badge/Code%20Time-1%2C455%20hrs%2052%20mins-blue)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-6%20Million%20lines%20of%20code-blue)
 
@@ -38,5 +38,5 @@ YAML                     11 mins             ░░░░░░░░░░░�
 ```
 
 
- Last Updated on 16/05/2022 18:52:58 UTC
+ Last Updated on 16/05/2022 18:56:18 UTC
 <!--END_SECTION:waka-->
