@@ -10,7 +10,7 @@ A human being still wandering in which specialisation I would fall in love with 
 ## 🛠 When & What do I code ?  
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-1%2C555%20hrs%2054%20mins-blue)
+![Code Time](http://img.shields.io/badge/Code%20Time-0%20secs-blue)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-2%20Million%20lines%20of%20code-blue)
 
@@ -29,14 +29,14 @@ A human being still wandering in which specialisation I would fall in love with 
 
 ```text
 💬 Programming Languages: 
-Python                   21 hrs 23 mins      ██████████████████████░░░   90.1% 
-Text                     1 hr 28 mins        █░░░░░░░░░░░░░░░░░░░░░░░░   6.23% 
-XML                      24 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   1.71% 
-Markdown                 23 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   1.68% 
-YAML                     2 mins              ░░░░░░░░░░░░░░░░░░░░░░░░░   0.2%
+Python                   12 hrs 5 mins       █████████████████████░░░░   86.75% 
+Text                     48 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   5.77% 
+XML                      34 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   4.17% 
+Markdown                 23 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   2.86% 
+YAML                     2 mins              ░░░░░░░░░░░░░░░░░░░░░░░░░   0.35%
 
 ```
 
 
- Last Updated on 02/06/2022 19:30:21 UTC
+ Last Updated on 03/06/2022 18:49:10 UTC
 <!--END_SECTION:waka-->
