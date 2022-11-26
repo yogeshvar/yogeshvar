@@ -6,7 +6,7 @@
 ## 🛠 When & What do I code ?  
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-1%2C843%20hrs%206%20mins-blue)
+![Code Time](http://img.shields.io/badge/Code%20Time-1%2C843%20hrs%203%20mins-blue)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-2%20Million%20lines%20of%20code-blue)
 
@@ -15,8 +15,8 @@
 ```text
 🌞 Morning    27 commits     ███░░░░░░░░░░░░░░░░░░░░░░   12.68% 
 🌆 Daytime    20 commits     ██░░░░░░░░░░░░░░░░░░░░░░░   9.39% 
-🌃 Evening    72 commits     ████████░░░░░░░░░░░░░░░░░   33.8% 
-🌙 Night      94 commits     ███████████░░░░░░░░░░░░░░   44.13%
+🌃 Evening    71 commits     ████████░░░░░░░░░░░░░░░░░   33.33% 
+🌙 Night      95 commits     ███████████░░░░░░░░░░░░░░   44.6%
 
 ```
 
@@ -34,5 +34,5 @@ Git Config               6 mins              █░░░░░░░░░░�
 ```
 
 
- Last Updated on 25/11/2022 19:15:10 UTC
+ Last Updated on 26/11/2022 18:45:37 UTC
 <!--END_SECTION:waka-->
