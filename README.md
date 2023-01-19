@@ -6,7 +6,7 @@
 ## 🛠 When & What do I code ?  
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-1%2C907%20hrs%2018%20mins-blue)
+![Code Time](http://img.shields.io/badge/Code%20Time-1%2C907%20hrs-blue)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-2%20Million%20lines%20of%20code-blue)
 
@@ -25,13 +25,12 @@
 
 ```text
 💬 Programming Languages: 
-Other                    6 hrs 41 mins       ███████████████████████░░   92.78% 
-Java                     21 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   4.99% 
-Markdown                 9 mins              ░░░░░░░░░░░░░░░░░░░░░░░░░   2.11% 
-Python                   0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   0.12%
+Other                    3 hrs 27 mins       ██████████████████████░░░   91.48% 
+Java                     18 mins             ██░░░░░░░░░░░░░░░░░░░░░░░   8.34% 
+Python                   0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   0.18%
 
 ```
 
 
- Last Updated on 18/01/2023 19:18:21 UTC
+ Last Updated on 19/01/2023 18:45:16 UTC
 <!--END_SECTION:waka-->
