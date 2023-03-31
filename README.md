@@ -6,7 +6,7 @@
 ## 🛠 When & What do I code ?  
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-2%2C050%20hrs%2048%20mins-blue)
+![Code Time](http://img.shields.io/badge/Code%20Time-2%2C051%20hrs%2025%20mins-blue)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-4.1%20million%20lines%20of%20code-blue)
 
@@ -32,5 +32,5 @@ TypeScript               44 mins             █░░░░░░░░░░�
 ```
 
 
- Last Updated on 31/03/2023 18:42:49 UTC
+ Last Updated on 31/03/2023 18:44:02 UTC
 <!--END_SECTION:waka-->
