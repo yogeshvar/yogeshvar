@@ -6,7 +6,7 @@
 ## 🛠 When & What do I code ?  
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-2%2C181%20hrs%2040%20mins-blue)
+![Code Time](http://img.shields.io/badge/Code%20Time-2%2C181%20hrs%2044%20mins-blue)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-3.8%20million%20lines%20of%20code-blue)
 
@@ -32,5 +32,5 @@ CSV                      26 mins             █░░░░░░░░░░�
 ```
 
 
- Last Updated on 21/05/2023 11:51:28 UTC
+ Last Updated on 21/05/2023 11:52:38 UTC
 <!--END_SECTION:waka-->
