@@ -6,17 +6,17 @@
 ## 🛠 When & What do I code ?  
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-2%2C221%20hrs%2044%20mins-blue)
+![Code Time](http://img.shields.io/badge/Code%20Time-2%2C221%20hrs%2050%20mins-blue)
 
-![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-4.1%20million%20lines%20of%20code-blue)
+![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-4.2%20million%20lines%20of%20code-blue)
 
 **I'm a Night 🦉** 
 
 ```text
-🌞 Morning                104 commits         ██░░░░░░░░░░░░░░░░░░░░░░░   08.48 % 
-🌆 Daytime                310 commits         ██████░░░░░░░░░░░░░░░░░░░   25.26 % 
-🌃 Evening                384 commits         ████████░░░░░░░░░░░░░░░░░   31.30 % 
-🌙 Night                  429 commits         █████████░░░░░░░░░░░░░░░░   34.96 % 
+🌞 Morning                105 commits         ██░░░░░░░░░░░░░░░░░░░░░░░   08.43 % 
+🌆 Daytime                318 commits         ██████░░░░░░░░░░░░░░░░░░░   25.54 % 
+🌃 Evening                393 commits         ████████░░░░░░░░░░░░░░░░░   31.57 % 
+🌙 Night                  429 commits         █████████░░░░░░░░░░░░░░░░   34.46 % 
 ```
 
 
@@ -32,5 +32,5 @@ Other                    1 hr 2 mins         █░░░░░░░░░░�
 ```
 
 
- Last Updated on 02/06/2023 10:47:05 UTC
+ Last Updated on 02/06/2023 10:48:23 UTC
 <!--END_SECTION:waka-->
