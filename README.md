@@ -6,7 +6,7 @@
 ## 🛠 When & What do I code ?  
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-2%2C273%20hrs-blue)
+![Code Time](http://img.shields.io/badge/Code%20Time-2%2C273%20hrs%202%20mins-blue)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-4.0%20million%20lines%20of%20code-blue)
 
@@ -28,5 +28,5 @@ No Activity Tracked This Week
 ```
 
 
- Last Updated on 12/07/2023 14:06:35 UTC
+ Last Updated on 12/07/2023 14:07:56 UTC
 <!--END_SECTION:waka-->
