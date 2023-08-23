@@ -8,7 +8,7 @@
 ![Visitor Badge](https://visitor-badge.feriirawann.repl.co?username=yogeshvar&repo=yogeshvar&label=Visitors&style=plastic&color=%23457BFF&contentType=svg)
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-2%2C284%20hrs%202%20mins-blue)
+![Code Time](http://img.shields.io/badge/Code%20Time-2%2C283%20hrs%2032%20mins-blue)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-4.0%20million%20lines%20of%20code-blue)
 
@@ -26,13 +26,13 @@
 
 ```text
 💬 Programming Languages: 
-Python                   1 hr                ██████████░░░░░░░░░░░░░░░   40.80 % 
-Assembly                 55 mins             █████████░░░░░░░░░░░░░░░░   37.38 % 
-MySQL                    24 mins             ████░░░░░░░░░░░░░░░░░░░░░   16.62 % 
-Objective-C              6 mins              █░░░░░░░░░░░░░░░░░░░░░░░░   04.50 % 
-Other                    0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.44 % 
+Assembly                 57 mins             ████████████░░░░░░░░░░░░░   47.93 % 
+MySQL                    49 mins             ██████████░░░░░░░░░░░░░░░   41.24 % 
+Objective-C              6 mins              █░░░░░░░░░░░░░░░░░░░░░░░░   05.57 % 
+Python                   5 mins              █░░░░░░░░░░░░░░░░░░░░░░░░   04.67 % 
+Other                    0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.54 % 
 ```
 
 
- Last Updated on 23/08/2023 14:30:27 UTC
+ Last Updated on 23/08/2023 14:31:51 UTC
 <!--END_SECTION:waka-->
