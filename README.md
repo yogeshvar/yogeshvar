@@ -8,7 +8,7 @@
 ![Visitor Badge](https://visitor-badge.feriirawann.repl.co?username=yogeshvar&repo=yogeshvar&label=Visitors&style=plastic&color=%23457BFF&contentType=svg)
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-2%2C306%20hrs%2032%20mins-blue)
+![Code Time](http://img.shields.io/badge/Code%20Time-2%2C306%20hrs%2053%20mins-blue)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-4.0%20million%20lines%20of%20code-blue)
 
@@ -34,5 +34,5 @@ Blade Template           28 mins             █░░░░░░░░░░�
 ```
 
 
- Last Updated on 06/10/2023 13:40:34 UTC
+ Last Updated on 06/10/2023 13:41:59 UTC
 <!--END_SECTION:waka-->
