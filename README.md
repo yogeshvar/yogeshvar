@@ -8,6 +8,8 @@
 ![Visitor Badge](https://visitor-badge.feriirawann.repl.co?username=yogeshvar&repo=yogeshvar&label=Visitors&style=plastic&color=%23457BFF&contentType=svg)
 
 <!--START_SECTION:waka-->
+![Code Time](http://img.shields.io/badge/Code%20Time-2%2C410%20hrs%2057%20mins-blue)
+
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-4.0%20million%20lines%20of%20code-blue)
 
 **I'm a Night 🦉** 
@@ -32,5 +34,5 @@ JSON                     11 mins             █░░░░░░░░░░�
 ```
 
 
- Last Updated on 06/12/2023 18:36:00 UTC
+ Last Updated on 06/12/2023 18:37:30 UTC
 <!--END_SECTION:waka-->
