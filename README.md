@@ -8,17 +8,17 @@
 ![Visitor Badge](https://visitor-badge.feriirawann.repl.co?username=yogeshvar&repo=yogeshvar&label=Visitors&style=plastic&color=%23457BFF&contentType=svg)
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-2%2C448%20hrs%2030%20mins-blue)
+![Code Time](http://img.shields.io/badge/Code%20Time-2%2C448%20hrs%2037%20mins-blue)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-4.0%20million%20lines%20of%20code-blue)
 
 **I'm a Night 🦉** 
 
 ```text
-🌞 Morning                99 commits          ██░░░░░░░░░░░░░░░░░░░░░░░   08.57 % 
-🌆 Daytime                299 commits         ██████░░░░░░░░░░░░░░░░░░░   25.89 % 
-🌃 Evening                340 commits         ███████░░░░░░░░░░░░░░░░░░   29.44 % 
-🌙 Night                  417 commits         █████████░░░░░░░░░░░░░░░░   36.10 % 
+🌞 Morning                99 commits          ██░░░░░░░░░░░░░░░░░░░░░░░   08.56 % 
+🌆 Daytime                300 commits         ██████░░░░░░░░░░░░░░░░░░░   25.95 % 
+🌃 Evening                340 commits         ███████░░░░░░░░░░░░░░░░░░   29.41 % 
+🌙 Night                  417 commits         █████████░░░░░░░░░░░░░░░░   36.07 % 
 ```
 
 
@@ -34,5 +34,5 @@ HTML                     1 hr 15 mins        █░░░░░░░░░░�
 ```
 
 
- Last Updated on 23/12/2023 05:30:50 UTC
+ Last Updated on 23/12/2023 05:32:23 UTC
 <!--END_SECTION:waka-->
