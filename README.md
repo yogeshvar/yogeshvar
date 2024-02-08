@@ -8,7 +8,7 @@
 ![Visitor Badge](https://visitor-badge.feriirawann.repl.co?username=yogeshvar&repo=yogeshvar&label=Visitors&style=plastic&color=%23457BFF&contentType=svg)
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-2%2C676%20hrs%201%20min-blue)
+![Code Time](http://img.shields.io/badge/Code%20Time-2%2C676%20hrs%207%20mins-blue)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-4.1%20million%20lines%20of%20code-blue)
 
@@ -34,5 +34,5 @@ JSON                     1 hr 15 mins        ██░░░░░░░░░�
 ```
 
 
- Last Updated on 08/02/2024 01:15:37 UTC
+ Last Updated on 08/02/2024 01:17:03 UTC
 <!--END_SECTION:waka-->
