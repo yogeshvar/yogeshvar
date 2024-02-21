@@ -8,10 +8,31 @@
 ![Visitor Badge](https://visitor-badge.feriirawann.repl.co?username=yogeshvar&repo=yogeshvar&label=Visitors&style=plastic&color=%23457BFF&contentType=svg)
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-2%2C699%20hrs%2013%20mins-blue)
+![Code Time](http://img.shields.io/badge/Code%20Time-2%2C701%20hrs%202%20mins-blue)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-4.1%20million%20lines%20of%20code-blue)
 
+**I'm a Night 🦉** 
 
- Last Updated on 21/02/2024 13:35:48 UTC
+```text
+🌞 Morning                120 commits         ██░░░░░░░░░░░░░░░░░░░░░░░   09.75 % 
+🌆 Daytime                304 commits         ██████░░░░░░░░░░░░░░░░░░░   24.70 % 
+🌃 Evening                356 commits         ███████░░░░░░░░░░░░░░░░░░   28.92 % 
+🌙 Night                  451 commits         █████████░░░░░░░░░░░░░░░░   36.64 % 
+```
+
+
+📊 **This Week I Spent My Time On** 
+
+```text
+💬 Programming Languages: 
+TypeScript               3 hrs 37 mins       ████████████████░░░░░░░░░   65.83 % 
+Other                    27 mins             ██░░░░░░░░░░░░░░░░░░░░░░░   08.37 % 
+Markdown                 24 mins             ██░░░░░░░░░░░░░░░░░░░░░░░   07.29 % 
+PHP                      23 mins             ██░░░░░░░░░░░░░░░░░░░░░░░   06.99 % 
+Bash                     12 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   03.73 % 
+```
+
+
+ Last Updated on 21/02/2024 13:37:31 UTC
 <!--END_SECTION:waka-->
