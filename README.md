@@ -8,7 +8,7 @@
 ![Visitor Badge](https://visitor-badge.feriirawann.repl.co?username=yogeshvar&repo=yogeshvar&label=Visitors&style=plastic&color=%23457BFF&contentType=svg)
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-2%2C737%20hrs%2016%20mins-blue)
+![Code Time](http://img.shields.io/badge/Code%20Time-2%2C729%20hrs%2056%20mins-blue)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-4.1%20million%20lines%20of%20code-blue)
 
@@ -26,13 +26,13 @@
 
 ```text
 💬 Programming Languages: 
-JavaScript               5 hrs 36 mins       ███████████░░░░░░░░░░░░░░   44.30 % 
-C#                       2 hrs 30 mins       █████░░░░░░░░░░░░░░░░░░░░   19.77 % 
-TypeScript               1 hr 41 mins        ███░░░░░░░░░░░░░░░░░░░░░░   13.42 % 
-YAML                     49 mins             ██░░░░░░░░░░░░░░░░░░░░░░░   06.50 % 
-Python                   36 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   04.74 % 
+TypeScript               9 hrs 36 mins       ███████████░░░░░░░░░░░░░░   45.91 % 
+JavaScript               6 hrs 14 mins       ███████░░░░░░░░░░░░░░░░░░   29.78 % 
+C#                       1 hr 59 mins        ██░░░░░░░░░░░░░░░░░░░░░░░   09.48 % 
+Python                   36 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   02.87 % 
+YAML                     33 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   02.66 % 
 ```
 
 
- Last Updated on 09/03/2024 01:45:02 UTC
+ Last Updated on 09/03/2024 18:35:11 UTC
 <!--END_SECTION:waka-->
