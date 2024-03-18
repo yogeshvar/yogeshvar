@@ -10,8 +10,29 @@
 <!--START_SECTION:waka-->
 ![Code Time](http://img.shields.io/badge/Code%20Time-2%2C756%20hrs%2023%20mins-blue)
 
-![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-4.1%20million%20lines%20of%20code-blue)
+![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-510.0%20thousand%20lines%20of%20code-blue)
+
+**I'm a Night 🦉** 
+
+```text
+🌞 Morning                59 commits          ███░░░░░░░░░░░░░░░░░░░░░░   11.07 % 
+🌆 Daytime                192 commits         █████████░░░░░░░░░░░░░░░░   36.02 % 
+🌃 Evening                129 commits         ██████░░░░░░░░░░░░░░░░░░░   24.20 % 
+🌙 Night                  153 commits         ███████░░░░░░░░░░░░░░░░░░   28.71 % 
+```
 
 
- Last Updated on 18/03/2024 13:36:03 UTC
+📊 **This Week I Spent My Time On** 
+
+```text
+💬 Programming Languages: 
+TypeScript               15 hrs 35 mins      ████████████████████░░░░░   81.32 % 
+JavaScript               1 hr 19 mins        ██░░░░░░░░░░░░░░░░░░░░░░░   06.94 % 
+Bash                     41 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   03.60 % 
+CSS                      31 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   02.75 % 
+Other                    27 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   02.36 % 
+```
+
+
+ Last Updated on 18/03/2024 13:37:12 UTC
 <!--END_SECTION:waka-->
