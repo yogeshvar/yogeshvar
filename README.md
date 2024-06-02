@@ -8,17 +8,17 @@
 ![Visitor Badge](https://visitor-badge.feriirawann.repl.co?username=yogeshvar&repo=yogeshvar&label=Visitors&style=plastic&color=%23457BFF&contentType=svg)
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-2%2C902%20hrs-blue)
+![Code Time](http://img.shields.io/badge/Code%20Time-2%2C902%20hrs%2013%20mins-blue)
 
-![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-356.9%20thousand%20lines%20of%20code-blue)
+![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-0%20lines%20of%20code-blue)
 
 **I'm an Early 🐤** 
 
 ```text
-🌞 Morning                60 commits          ████████░░░░░░░░░░░░░░░░░   32.97 % 
-🌆 Daytime                42 commits          ██████░░░░░░░░░░░░░░░░░░░   23.08 % 
-🌃 Evening                35 commits          █████░░░░░░░░░░░░░░░░░░░░   19.23 % 
-🌙 Night                  45 commits          ██████░░░░░░░░░░░░░░░░░░░   24.73 % 
+🌞 Morning                0 commits           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.00 % 
+🌆 Daytime                0 commits           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.00 % 
+🌃 Evening                0 commits           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.00 % 
+🌙 Night                  0 commits           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.00 % 
 ```
 
 
@@ -34,5 +34,5 @@ Bash                     0 secs              ░░░░░░░░░░░�
 ```
 
 
- Last Updated on 02/06/2024 20:38:17 UTC
+ Last Updated on 02/06/2024 20:38:49 UTC
 <!--END_SECTION:waka-->
