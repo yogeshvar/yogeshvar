@@ -8,8 +8,6 @@
 ![Visitor Badge](https://visitor-badge.feriirawann.repl.co?username=yogeshvar&repo=yogeshvar&label=Visitors&style=plastic&color=%23457BFF&contentType=svg)
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-2%2C903%20hrs%2018%20mins-blue)
-
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-4.2%20million%20lines%20of%20code-blue)
 
 **I'm an Early 🐤** 
@@ -30,5 +28,5 @@ SSH Config               0 secs              ███████████�
 ```
 
 
- Last Updated on 14/06/2024 20:14:30 UTC
+ Last Updated on 15/06/2024 18:36:41 UTC
 <!--END_SECTION:waka-->
