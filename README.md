@@ -10,15 +10,15 @@
 <!--START_SECTION:waka-->
 ![Code Time](http://img.shields.io/badge/Code%20Time-2%2C905%20hrs%208%20mins-blue)
 
-![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-28.5%20thousand%20lines%20of%20code-blue)
+![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-0%20lines%20of%20code-blue)
 
-**I'm a Night 🦉** 
+**I'm an Early 🐤** 
 
 ```text
 🌞 Morning                0 commits           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.00 % 
 🌆 Daytime                0 commits           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.00 % 
-🌃 Evening                5 commits           █████████████████████░░░░   83.33 % 
-🌙 Night                  1 commits           ████░░░░░░░░░░░░░░░░░░░░░   16.67 % 
+🌃 Evening                0 commits           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.00 % 
+🌙 Night                  0 commits           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.00 % 
 ```
 
 
@@ -31,5 +31,5 @@ PHP                      2 mins              █░░░░░░░░░░�
 ```
 
 
- Last Updated on 21/06/2024 21:33:50 UTC
+ Last Updated on 21/06/2024 21:34:25 UTC
 <!--END_SECTION:waka-->
