@@ -26,10 +26,9 @@
 
 ```text
 💬 Programming Languages: 
-JavaScript               23 mins             ██████████████████████░░░   89.97 % 
-PHP                      2 mins              ███░░░░░░░░░░░░░░░░░░░░░░   10.03 % 
+No Activity Tracked This Week
 ```
 
 
- Last Updated on 27/06/2024 23:58:28 UTC
+ Last Updated on 28/06/2024 18:36:52 UTC
 <!--END_SECTION:waka-->
