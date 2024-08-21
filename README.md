@@ -10,15 +10,15 @@
 <!--START_SECTION:waka-->
 ![Code Time](http://img.shields.io/badge/Code%20Time-2%2C919%20hrs%2051%20mins-blue)
 
-![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-448.0%20thousand%20lines%20of%20code-blue)
+![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-0%20lines%20of%20code-blue)
 
 **I'm an Early 🐤** 
 
 ```text
-🌞 Morning                86 commits          █████████░░░░░░░░░░░░░░░░   36.44 % 
-🌆 Daytime                42 commits          ████░░░░░░░░░░░░░░░░░░░░░   17.80 % 
-🌃 Evening                41 commits          ████░░░░░░░░░░░░░░░░░░░░░   17.37 % 
-🌙 Night                  67 commits          ███████░░░░░░░░░░░░░░░░░░   28.39 % 
+🌞 Morning                0 commits           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.00 % 
+🌆 Daytime                0 commits           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.00 % 
+🌃 Evening                0 commits           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.00 % 
+🌙 Night                  0 commits           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.00 % 
 ```
 
 
@@ -30,5 +30,5 @@ No Activity Tracked This Week
 ```
 
 
- Last Updated on 21/08/2024 02:41:46 UTC
+ Last Updated on 21/08/2024 02:42:19 UTC
 <!--END_SECTION:waka-->
