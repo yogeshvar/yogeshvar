@@ -8,6 +8,8 @@
 ![Visitor Badge](https://visitor-badge.feriirawann.repl.co?username=yogeshvar&repo=yogeshvar&label=Visitors&style=plastic&color=%23457BFF&contentType=svg)
 
 <!--START_SECTION:waka-->
+![Code Time](http://img.shields.io/badge/Code%20Time-2%2C923%20hrs%2011%20mins-blue)
+
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-3.9%20million%20lines%20of%20code-blue)
 
 **I'm an Early 🐤** 
@@ -32,5 +34,5 @@ JSON                     9 mins              █░░░░░░░░░░�
 ```
 
 
- Last Updated on 27/03/2025 18:41:09 UTC
+ Last Updated on 27/03/2025 18:42:26 UTC
 <!--END_SECTION:waka-->
