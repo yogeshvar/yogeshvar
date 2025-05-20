@@ -5,8 +5,6 @@
 
 ## 🛠 When & What do I code ?  
 
-![Visitor Badge](https://visitor-badge.feriirawann.repl.co?username=yogeshvar&repo=yogeshvar&label=Visitors&style=plastic&color=%23457BFF&contentType=svg)
-
 <!--START_SECTION:waka-->
 ![Code Time](http://img.shields.io/badge/Code%20Time-2%2C931%20hrs%2011%20mins-blue)
 
