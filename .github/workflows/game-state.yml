@@ -1,0 +1,16 @@
+
+player:
+  hp: 100
+  max_hp: 100
+  inventory: ["potion"]
+  last_move: null
+
+enemy:
+  name: "ShadowBot"
+  hp: 80
+  max_hp: 80
+  behavior: "aggressive"
+  last_move: null
+
+history: []
+turn: 1
