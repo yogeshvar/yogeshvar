@@ -1,6 +1,8 @@
-<h1>👋 Hi there, I'm Yogeshvar - aka Maggie</h1>
+<h1>👋 Hi there, I'm Yogeshvar — aka Maggie</h1>
 
 ## Software Engineer
+
+Just another software engineer who loves coding and tinkering with all things tech. This profile updates weekly, sharing a fun comic from my dev adventures along with coding stats.
 
 ## This week: a tiny comic
 
@@ -75,3 +77,4 @@ Python                   4 repos             ██░░░░░░░░░�
 <!--END_SECTION:waka-->
 
 *Earlier strips → [COMIC_BOOK.md](COMIC_BOOK.md)*
+
