@@ -5,11 +5,11 @@
 ## This week: a tiny comic
 
 <!-- COMIC_STORY_START -->
-### My Coding Life in 20 Hours
+### My Configured Life
 
 | ![Panel 1](https://raw.githubusercontent.com/yogeshvar/yogeshvar/master/assets/comic/latest/1.png) | ![Panel 2](https://raw.githubusercontent.com/yogeshvar/yogeshvar/master/assets/comic/latest/2.png) | ![Panel 3](https://raw.githubusercontent.com/yogeshvar/yogeshvar/master/assets/comic/latest/3.png) |
 |:---:|:---:|:---:|
-| *Twenty hours logged this week! Feeling incredibly productive.* | *Mostly Python and Rust, as any respectable dev would focus on.* | *The rest? Four hours spent perfecting my Neovim TOML config, naturally.* |
+| *Ready to dive deep into Python's elegance and Rust's performance.* | *Who knew 20% of my time would be dedicated to perfecting syntax for a config file?* | *At least my Neovim skills are 100% sharp. And my config files? Impeccable.* |
 
 <!-- COMIC_STORY_END -->
 

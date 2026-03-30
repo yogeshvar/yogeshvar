@@ -1,0 +1,15 @@
+{
+  "issue": "2026-W14",
+  "title": "My Coding Life in 20 Hours",
+  "panels": [
+    {
+      "caption": "Twenty hours logged this week! Feeling incredibly productive."
+    },
+    {
+      "caption": "Mostly Python and Rust, as any respectable dev would focus on."
+    },
+    {
+      "caption": "The rest? Four hours spent perfecting my Neovim TOML config, naturally."
+    }
+  ]
+}
