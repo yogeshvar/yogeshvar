@@ -5,11 +5,11 @@
 ## This week: a tiny comic
 
 <!-- COMIC_STORY_START -->
-### A Productive Thirty
+### A Week in Code (Maybe)
 
 | ![Panel 1](https://raw.githubusercontent.com/yogeshvar/yogeshvar/master/assets/comic/latest/1.png) | ![Panel 2](https://raw.githubusercontent.com/yogeshvar/yogeshvar/master/assets/comic/latest/2.png) | ![Panel 3](https://raw.githubusercontent.com/yogeshvar/yogeshvar/master/assets/comic/latest/3.png) |
 |:---:|:---:|:---:|
-| *First, some serious infrastructure work in Dockerfile.* | *Next, a crucial contribution from the 'Stack Overflow paste' language.* | *And just like that, the total development time for the week clocked in at 30 minutes.* |
+| *My coding stats are so mysterious, even I don't know what I'm doing.* | *One hour of 'Other' language in an 'Unknown' editor. Pretty sure I just opened the IDE.* | *Future employers will be thrilled by my mastery of... the unknown.* |
 
 <!-- COMIC_STORY_END -->
 
