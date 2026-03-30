@@ -1,4 +1,4 @@
-name: Profile comic (WakaTime + Nano Banana)
+name: Weekly profile (Waka stats + comic)
 
 on:
   schedule:
@@ -18,19 +18,46 @@ permissions:
   contents: write
 
 concurrency:
-  group: profile-comic
+  group: weekly-profile
   cancel-in-progress: true
 
 jobs:
-  update:
+  waka-readme:
+    name: Update README with dev metrics
+    runs-on: ubuntu-latest
+    steps:
+      - uses: anmol098/waka-readme-stats@v5
+        with:
+          GH_TOKEN: ${{ github.token }}
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
+          SECTION_NAME: waka
+          SHOW_LOC_CHART: "False"
+          SHOW_SHORT_INFO: "False"
+          SHOW_LINES_OF_CODE: "False"
+          SHOW_PROFILE_VIEWS: "True"
+          SHOW_COMMIT: "True"
+          SHOW_DAYS_OF_WEEK: "True"
+          SHOW_TIMEZONE: "True"
+          SHOW_LANGUAGE: "True"
+          SHOW_EDITORS: "True"
+          SHOW_PROJECTS: "True"
+          SHOW_OS: "True"
+          SHOW_LANGUAGE_PER_REPO: "True"
+          SHOW_TOTAL_CODE_TIME: "True"
+          SHOW_UPDATED_DATE: "True"
+          COMMIT_MESSAGE: "chore: update dev metrics"
+
+  profile-comic:
+    name: Generate weekly comic
+    needs: waka-readme
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
       - name: Checkout default branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
           cache: pip
@@ -54,12 +81,8 @@ jobs:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
-          # github.event.inputs only applies to workflow_dispatch; avoid top-level `inputs` on schedule.
           COMIC_FORCE: ${{ github.event_name == 'workflow_dispatch' && (github.event.inputs.comic_force == true || github.event.inputs.comic_force == 'true') && '1' || '' }}
           COMIC_USE_PLACEHOLDER: ${{ github.event_name == 'workflow_dispatch' && (github.event.inputs.use_placeholder_stats == true || github.event.inputs.use_placeholder_stats == 'true') && '1' || '' }}
-          # Optional: uncomment to pin models (see https://ai.google.dev/gemini-api/docs/image-generation)
-          # GEMINI_TEXT_MODEL: gemini-2.5-flash
-          # GEMINI_IMAGE_MODEL: gemini-3.1-flash-image-preview
         run: python scripts/generate_profile_comic.py
 
       - name: Commit and push if changed
