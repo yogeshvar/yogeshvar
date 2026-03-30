@@ -1,15 +1,15 @@
 {
   "issue": "2026-W14",
-  "title": "The 1-Hour Enigma",
+  "title": "The CI Commando",
   "panels": [
     {
-      "caption": "My dedication to coding is immeasurable... or at least, hard to measure."
+      "caption": "My coding stats for the week are in! Prepare to be amazed by my productivity."
     },
     {
-      "caption": "100% 'Other' language? I guess 'debugging my own brain' isn't officially supported."
+      "caption": "Spent 88% of my time on GitHub Actions YAML, and a solid 12% on Bash. Truly a polyglot."
     },
     {
-      "caption": "And 100% 'Unknown' editor. Maybe my code was so abstract, it transcended all known IDEs?"
+      "caption": "My top editor? The CI Terminal, of course. My code writes itself, apparently."
     }
   ]
 }
