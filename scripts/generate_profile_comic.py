@@ -3,8 +3,10 @@
 Fetch WakaTime stats, ask Gemini (text) for a 3-panel comic script, then
 generate each panel with a Gemini image model via the google-genai SDK.
 Updates README between COMIC_STORY delimiters and writes assets/comic/latest/*.png.
-When the ISO calendar week changes, archives the previous strip to assets/comic/archive/
+When the ISO calendar week changes, archives the previous strip to assets/comic/archive/{issue}/
 and appends a chapter to COMIC_BOOK.md (growing archive / "book").
+If the strip is regenerated in the same week (stats change or COMIC_FORCE), the current latest/
+is copied to assets/comic/archive/snapshots/{issue}_{utc}/ first so older versions are kept on disk.
 Character look is fixed in assets/comic/character_bible.txt (no glasses); assets/comic/character_reference.png
 anchors the same face across weeks after the first run.
 """
@@ -31,6 +33,8 @@ README = ROOT / "README.md"
 COMIC_BOOK = ROOT / "COMIC_BOOK.md"
 ASSETS_DIR = ROOT / "assets" / "comic" / "latest"
 ARCHIVE_DIR = ROOT / "assets" / "comic" / "archive"
+# Same-week regenerations copy outgoing panels here before overwriting latest/.
+SNAPSHOTS_DIR = ARCHIVE_DIR / "snapshots"
 CHARACTER_BIBLE_FILE = ROOT / "assets" / "comic" / "character_bible.txt"
 CHARACTER_REFERENCE_FILE = ROOT / "assets" / "comic" / "character_reference.png"
 META_NAME = "meta.json"
@@ -455,6 +459,25 @@ def meta_for_write(issue: str, title: str, panels: list[dict]) -> dict:
     }
 
 
+def snapshot_outgoing_strip_same_week(issue_id: str, prev_meta: dict) -> None:
+    """If we are about to replace this week's strip, keep the old PNGs + meta under archive/snapshots/."""
+    if (prev_meta.get("issue") or "").strip() != issue_id:
+        return
+    if not (ASSETS_DIR / "1.png").is_file():
+        return
+    ts = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    dest = SNAPSHOTS_DIR / f"{issue_id}_{ts}"
+    dest.mkdir(parents=True, exist_ok=True)
+    for name in (META_NAME, "1.png", "2.png", "3.png"):
+        src = ASSETS_DIR / name
+        if src.is_file():
+            shutil.copy2(src, dest / name)
+    print(
+        f"Saved previous strip for {issue_id} to {dest.relative_to(ROOT)} (same-week regen).",
+        file=sys.stderr,
+    )
+
+
 def archive_strip_and_append_book(
     owner: str,
     repo: str,
@@ -576,6 +599,10 @@ def main() -> None:
         print("WakaTime stats unchanged; skipping comic regeneration.")
         print("Set COMIC_FORCE=1 to regenerate anyway.", file=sys.stderr)
         return
+
+    if prev_meta and (ASSETS_DIR / "1.png").is_file():
+        if (prev_meta.get("issue") or "").strip() == issue_id:
+            snapshot_outgoing_strip_same_week(issue_id, prev_meta)
 
     if (
         prev_meta
