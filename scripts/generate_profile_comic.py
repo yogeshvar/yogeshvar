@@ -321,17 +321,27 @@ def build_readme_block(
     panels: list[dict],
 ) -> str:
     base = f"https://raw.githubusercontent.com/{owner}/{repo}/{branch}/assets/comic/latest"
+    # One row of images (GitHub renders markdown tables as columns).
+    n = len(panels)
+    num_row = "|" + "|".join(f" **{i}** " for i in range(1, n + 1)) + "|"
+    sep_row = "|" + "|".join([":---:"] * n) + "|"
+    img_cells: list[str] = []
+    cap_cells: list[str] = []
+    for i, p in enumerate(panels, start=1):
+        img_cells.append(f"![Panel {i}]({base}/{i}.png)")
+        cap = (p.get("caption") or "").strip()
+        cap_cells.append(f"*{cap}*" if cap else " ")
+    img_row = "| " + " | ".join(img_cells) + " |"
+    cap_row = "| " + " | ".join(cap_cells) + " |"
     lines = [
         f"### {title}",
         "",
+        num_row,
+        sep_row,
+        img_row,
+        cap_row,
+        "",
     ]
-    for i, p in enumerate(panels, start=1):
-        cap = p.get("caption", "").strip()
-        lines.append(f"![Panel {i}]({base}/{i}.png)")
-        lines.append("")
-        if cap:
-            lines.append(f"*{cap}*")
-            lines.append("")
     return "\n".join(lines).rstrip() + "\n"
 
 
