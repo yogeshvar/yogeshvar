@@ -57,6 +57,22 @@ def text_models_to_try() -> list[str]:
     return list(DEFAULT_TEXT_MODEL_CHAIN)
 
 
+def make_genai_client(api_key: str) -> genai.Client:
+    """Long HTTP timeout + retries: image models often run long; 503/deadline errors are often transient."""
+    timeout_ms = int(os.environ.get("GEMINI_HTTP_TIMEOUT_MS", "600000"))
+    attempts = int(os.environ.get("GEMINI_HTTP_RETRY_ATTEMPTS", "6"))
+    attempts = max(2, min(attempts, 20))
+    http_opts = types.HttpOptions(
+        timeout=timeout_ms,
+        retry_options=types.HttpRetryOptions(
+            attempts=attempts,
+            initial_delay=2.0,
+            max_delay=90.0,
+        ),
+    )
+    return genai.Client(api_key=api_key, http_options=http_opts)
+
+
 def die(msg: str, code: int = 1) -> None:
     print(msg, file=sys.stderr)
     sys.exit(code)
@@ -466,7 +482,7 @@ def main() -> None:
     waka_key = os.environ.get("WAKATIME_API_KEY", "").strip()
     if not gemini_key:
         die("GEMINI_API_KEY is required")
-    client = genai.Client(api_key=gemini_key)
+    client = make_genai_client(gemini_key)
 
     force = _truthy_env("COMIC_FORCE")
     use_placeholder = _truthy_env("COMIC_USE_PLACEHOLDER")

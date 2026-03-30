@@ -83,6 +83,9 @@ jobs:
           DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
           COMIC_FORCE: ${{ github.event_name == 'workflow_dispatch' && (github.event.inputs.comic_force == true || github.event.inputs.comic_force == 'true') && '1' || '' }}
           COMIC_USE_PLACEHOLDER: ${{ github.event_name == 'workflow_dispatch' && (github.event.inputs.use_placeholder_stats == true || github.event.inputs.use_placeholder_stats == 'true') && '1' || '' }}
+          # Long calls + retries for Gemini image/text (503 / deadline expired in CI).
+          GEMINI_HTTP_TIMEOUT_MS: "600000"
+          GEMINI_HTTP_RETRY_ATTEMPTS: "6"
         run: python scripts/generate_profile_comic.py
 
       - name: Commit and push if changed
