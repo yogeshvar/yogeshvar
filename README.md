@@ -1,115 +1,26 @@
-# 🧙‍♂️ GitHub RPG Adventure
-[![Made with Python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
-[![Interactive](https://img.shields.io/badge/Type-Interactive%20Game-brightgreen.svg)](https://github.com/yogeshvar/github-rpg)
-[![Community Driven](https://img.shields.io/badge/Community-Driven-ff69b4.svg)](https://github.com/yogeshvar/github-rpg/issues)
+# Hi, I'm Yogeshvar
 
-> **A collaborative text-based RPG that lives entirely on GitHub!** Battle monsters, make strategic decisions, and watch the story unfold through GitHub Issues and Actions.
+Welcome to my GitHub profile.
 
-## 🎮 How to Play
+## Coding time
 
-This isn't your typical repository - it's a living, breathing RPG where **YOU** control the hero! Every move you make shapes the adventure.
+[![Wakatime](https://wakatime.com/badge/user/YOUR_WAKATIME_USER_ID.svg)](https://wakatime.com/@YOUR_WAKATIME_USER_ID)
 
-### 🗡️ Current Game State
+Replace the badge `user/...` segment with your Wakatime public user id (from your Wakatime profile URL).
 
-**Turn:** 1
+## This week: a tiny comic
 
-**🧙‍♂️ Player Status:**
-- **HP:** 100/100 ❤️
-- **Inventory:** 🧪 potion
+<!-- COMIC_STORY_START -->
+*The first workflow run will replace this block with three panels and captions.*
 
-**👹 Enemy Status:**  
-- **HP:** 80/80 💀
+<!-- COMIC_STORY_END -->
 
 ---
 
-### 🔥 Last Battle Log
+Setup (once):
 
-- Game has started! Submit your move to begin the adventure.
+1. Repo secrets: `GEMINI_API_KEY` ([Google AI Studio](https://aistudio.google.com/apikey)), `WAKATIME_API_KEY` (Wakatime → Settings → API key).
+2. Optional: set `GEMINI_IMAGE_MODEL` to `gemini-3.1-flash-image-preview` (Nano Banana 2) in the workflow `env` for newer image quality—see [Nano Banana image generation](https://ai.google.dev/gemini-api/docs/image-generation).
+3. Run **Actions → Profile comic → Run workflow**, or wait for the weekly schedule.
 
----
-
-## 🎯 Make Your Move
-
-Want to join the adventure? It's simple:
-
-1. **[Create a new Issue](../../issues/new)**
-2. **Use one of these commands as the title:**
-   - `attack` - Strike the enemy with your weapon
-   - `heal` - Use a potion from your inventory
-
-3. **Watch the magic happen** - GitHub Actions will process your move and update the game!
-
-## 🏆 Game Features
-
-- **🤖 Adaptive AI Enemy** - The enemy learns from your patterns and adapts its strategy
-- **📊 Dynamic Combat** - Randomized damage and healing for unpredictable battles  
-- **🎒 Inventory System** - Manage your potions and items strategically
-- **📈 Turn-based Strategy** - Every decision matters in this tactical RPG
-- **🌐 Community Driven** - Anyone can contribute to the adventure
-- **📜 Battle History** - Full log of all moves and outcomes
-
-## 🛠️ Technical Details
-
-This game is powered by:
-- **Python 3.x** with YAML state management
-- **GitHub Issues** for player input
-- **GitHub Actions** for game processing (coming soon!)
-- **Dynamic README** updates for real-time game state
-
-### 🗂️ Project Structure
-
-```
-github-rpg/
-├── game.py          # Core game logic and combat system
-├── game-state.yml   # Persistent game state (auto-generated)
-├── README.md        # This living game board
-└── .github/         # GitHub Actions workflows (coming soon!)
-```
-
-## 🎲 Game Mechanics
-
-### Combat System
-- **Attack**: Deal 5-15 damage to the enemy
-- **Heal**: Restore 10-20 HP using a potion
-- **Enemy AI**: Adapts based on your recent moves
-  - Charges when you heal
-  - Defends against repeated attacks  
-  - Becomes evasive when low on health
-
-### Victory Conditions
-- Defeat the enemy by reducing their HP to 0
-- Survive long enough to claim victory!
-
-## 🤝 Contributing
-
-Found a bug? Want to suggest a new feature? 
-
-1. **Battle Bugs**: [Report issues](../../issues) you encounter
-2. **Feature Requests**: Suggest new moves, enemies, or mechanics
-3. **Code Contributions**: Fork, improve, and submit PRs!
-
-## 📊 Stats & Records
-
-- **Total Battles**: Coming soon!
-- **Community Victories**: Coming soon!
-- **Most Active Players**: Coming soon!
-
-## 🏅 Hall of Fame
-
-*Be the first to complete an epic battle and earn your place here!*
-
----
-
-<div align="center">
-
-**Ready for adventure?** 
-
-**[⚔️ MAKE YOUR MOVE ⚔️](../../issues/new)**
-
-*Every GitHub Issue becomes part of our epic tale!*
-
-</div>
-
----
-
-*Made with ❤️ by the GitHub community | Powered by Python & GitHub Actions*
+Images are committed under `assets/comic/latest/` and linked via `raw.githubusercontent.com` so the profile README stays fast and cache-friendly.

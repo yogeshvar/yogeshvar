@@ -1,0 +1,41 @@
+name: Profile comic (WakaTime + Nano Banana)
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-comic
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate comic and patch README
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+          # Optional overrides (see https://ai.google.dev/gemini-api/docs/image-generation):
+          # GEMINI_TEXT_MODEL: gemini-2.5-flash
+          # GEMINI_IMAGE_MODEL: gemini-3.1-flash-image-preview
+        run: python scripts/generate_profile_comic.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md assets/comic/latest/*.png .github/.last_wakatime_hash
+          git diff --staged --quiet || (git commit -m "chore: refresh weekly dev comic" && git push)
