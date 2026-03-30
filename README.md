@@ -1,11 +1,6 @@
-# Hi, I'm Yogeshvar
+<h1><img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="30" alt=""/> Hi there, I'm Yogeshvar - aka Maggie</h1>
 
-Welcome to my GitHub profile.
-
-## Coding time
-
-<!--START_SECTION:waka-->
-<!--END_SECTION:waka-->
+## Software Engineer
 
 ## This week: a tiny comic
 
@@ -17,5 +12,8 @@ Welcome to my GitHub profile.
 | *My dedication to coding is immeasurable... or at least, hard to measure.* | *100% 'Other' language? I guess 'debugging my own brain' isn't officially supported.* | *And 100% 'Unknown' editor. Maybe my code was so abstract, it transcended all known IDEs?* |
 
 <!-- COMIC_STORY_END -->
+
+<!--START_SECTION:waka-->
+<!--END_SECTION:waka-->
 
 *Earlier strips → [COMIC_BOOK.md](COMIC_BOOK.md)*
