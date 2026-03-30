@@ -2,7 +2,11 @@
 """
 Fetch WakaTime stats, ask Gemini (text) for a 3-panel comic script, then
 generate each panel with a Gemini image model via the google-genai SDK.
-Updates README between COMIC_STORY delimiters and writes assets/comic/latest/*.png
+Updates README between COMIC_STORY delimiters and writes assets/comic/latest/*.png.
+When the ISO calendar week changes, archives the previous strip to assets/comic/archive/
+and appends a chapter to COMIC_BOOK.md (growing archive / "book").
+Character look is fixed in assets/comic/character_bible.txt (no glasses); assets/comic/character_reference.png
+anchors the same face across weeks after the first run.
 """
 
 from __future__ import annotations
@@ -12,9 +16,11 @@ import hashlib
 import json
 import os
 import random
+import shutil
 import sys
 import urllib.error
 import urllib.request
+from datetime import datetime, timezone
 from pathlib import Path
 
 from google import genai
@@ -22,8 +28,20 @@ from google.genai import types
 
 ROOT = Path(__file__).resolve().parents[1]
 README = ROOT / "README.md"
+COMIC_BOOK = ROOT / "COMIC_BOOK.md"
 ASSETS_DIR = ROOT / "assets" / "comic" / "latest"
+ARCHIVE_DIR = ROOT / "assets" / "comic" / "archive"
+CHARACTER_BIBLE_FILE = ROOT / "assets" / "comic" / "character_bible.txt"
+CHARACTER_REFERENCE_FILE = ROOT / "assets" / "comic" / "character_reference.png"
+META_NAME = "meta.json"
 HASH_FILE = ROOT / ".github" / ".last_wakatime_hash"
+
+# Fallback if character_bible.txt is missing (still: no glasses).
+DEFAULT_CHARACTER_BIBLE = (
+    "Human cartoon developer, young adult, round face, short dark hair, NO glasses or "
+    "sunglasses (eyes only), warm skin tone, casual solid-color tee, thick black outlines "
+    "and flat colors; same character every time."
+)
 
 # gemini-2.0-flash is retired for new API keys; we try 2.5 first, then 1.5.
 DEFAULT_TEXT_MODEL_CHAIN = ("gemini-2.5-flash", "gemini-1.5-flash")
@@ -173,11 +191,18 @@ def comic_plan_schema() -> types.Schema:
         type=types.Type.OBJECT,
         properties={
             "title": types.Schema(type=types.Type.STRING),
-            "character_design": types.Schema(type=types.Type.STRING),
             "panels": types.Schema(type=types.Type.ARRAY, items=panel),
         },
-        required=["title", "character_design", "panels"],
+        required=["title", "panels"],
     )
+
+
+def load_character_bible() -> str:
+    if CHARACTER_BIBLE_FILE.is_file():
+        text = CHARACTER_BIBLE_FILE.read_text(encoding="utf-8").strip()
+        if text:
+            return text
+    return DEFAULT_CHARACTER_BIBLE
 
 
 def fetch_comic_plan(client: genai.Client, user_text: str) -> dict:
@@ -228,8 +253,9 @@ def gemini_image_png(
     model: str,
     *,
     scene_prompt: str,
-    character_design: str | None,
-    reference_png: bytes | None,
+    character_design: str,
+    strip_panel1_png: bytes | None,
+    weekly_character_png: bytes | None,
 ) -> bytes:
     image_config = types.ImageConfig(aspect_ratio="1:1")
     if "3.1-flash-image" in model or "3-pro-image" in model:
@@ -239,30 +265,42 @@ def gemini_image_png(
         image_config=image_config,
     )
 
-    if reference_png is None:
-        if not (character_design or "").strip():
-            die("character_design is required for the first panel")
+    bible = character_design.strip()
+    if strip_panel1_png is not None:
         text = (
-            "Single square comic panel.\n\n"
-            "CHARACTER — draw exactly this design; it must stay consistent "
-            "across a 3-panel strip:\n"
-            f"{character_design.strip()}\n\n"
-            f"SCENE:\n{scene_prompt}"
-        )
-        contents: str | list[types.Part] = text
-    else:
-        text = (
-            "The attached image is panel 1 of the same comic strip. "
-            "Keep the protagonist IDENTICAL: same face shape, features, hair, "
-            "glasses, skin tone, body proportions, clothing, and colors. "
-            "Same outline thickness and flat-color style. Do not invent a new character.\n\n"
-            "Draw only the next panel (one new frame), same canvas style:\n"
+            "The attached image is panel 1 of this week's 3-panel strip. "
+            "Keep the protagonist IDENTICAL: same face, hair, skin tone, body, clothing "
+            "colors. They must NOT wear glasses or sunglasses—no eyewear. "
+            "Same outline thickness and flat-color style.\n\n"
+            "Draw only the next panel (one new frame):\n"
             f"{scene_prompt}"
+        )
+        contents: str | list[types.Part] = [
+            types.Part.from_text(text=text),
+            types.Part.from_bytes(data=strip_panel1_png, mime_type="image/png"),
+        ]
+    elif weekly_character_png is not None:
+        text = (
+            "The attached image is this recurring developer from a previous comic week. "
+            "Draw the SAME person for a brand-new panel: same face, hair, skin, outfit "
+            "palette, NO glasses or sunglasses (bare eyes only), same cartoon style. "
+            "New pose and scene only.\n\n"
+            "Design bible (must match):\n"
+            f"{bible}\n\n"
+            f"SCENE:\n{scene_prompt}"
         )
         contents = [
             types.Part.from_text(text=text),
-            types.Part.from_bytes(data=reference_png, mime_type="image/png"),
+            types.Part.from_bytes(data=weekly_character_png, mime_type="image/png"),
         ]
+    else:
+        text = (
+            "Single square comic panel.\n\n"
+            "CHARACTER — draw exactly; this same person appears every week in this repo:\n"
+            f"{bible}\n\n"
+            f"SCENE:\n{scene_prompt}"
+        )
+        contents = text
 
     resp = client.models.generate_content(
         model=model,
@@ -313,15 +351,14 @@ def facts_from_wakatime(stats: dict) -> dict:
     }
 
 
-def build_readme_block(
-    owner: str,
-    repo: str,
-    branch: str,
-    title: str,
-    panels: list[dict],
-) -> str:
-    base = f"https://raw.githubusercontent.com/{owner}/{repo}/{branch}/assets/comic/latest"
-    # One row of images (GitHub renders markdown tables as columns).
+def current_issue_id() -> str:
+    d = datetime.now(timezone.utc).date()
+    y, w, _ = d.isocalendar()
+    return f"{y}-W{w:02d}"
+
+
+def comic_strip_table_markdown(base: str, panels: list[dict]) -> str:
+    """Three-column table: one row of images, one row of captions (GitHub-friendly)."""
     n = len(panels)
     num_row = "|" + "|".join(f" **{i}** " for i in range(1, n + 1)) + "|"
     sep_row = "|" + "|".join([":---:"] * n) + "|"
@@ -333,16 +370,86 @@ def build_readme_block(
         cap_cells.append(f"*{cap}*" if cap else " ")
     img_row = "| " + " | ".join(img_cells) + " |"
     cap_row = "| " + " | ".join(cap_cells) + " |"
-    lines = [
-        f"### {title}",
-        "",
-        num_row,
-        sep_row,
-        img_row,
-        cap_row,
-        "",
-    ]
-    return "\n".join(lines).rstrip() + "\n"
+    return "\n".join([num_row, sep_row, img_row, cap_row, ""])
+
+
+def build_readme_block(
+    owner: str,
+    repo: str,
+    branch: str,
+    title: str,
+    panels: list[dict],
+) -> str:
+    base = f"https://raw.githubusercontent.com/{owner}/{repo}/{branch}/assets/comic/latest"
+    return f"### {title}\n\n{comic_strip_table_markdown(base, panels)}".rstrip() + "\n"
+
+
+def load_latest_meta() -> dict | None:
+    path = ASSETS_DIR / META_NAME
+    if not path.is_file():
+        return None
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return None
+
+
+def meta_for_write(issue: str, title: str, panels: list[dict]) -> dict:
+    return {
+        "issue": issue,
+        "title": title,
+        "panels": [{"caption": (p.get("caption") or "").strip()} for p in panels],
+    }
+
+
+def archive_strip_and_append_book(
+    owner: str,
+    repo: str,
+    branch: str,
+    prev: dict,
+) -> None:
+    """Copy latest PNGs + meta into archive/{issue}/ and append COMIC_BOOK.md."""
+    old_issue = (prev.get("issue") or "").strip()
+    if not old_issue or not (ASSETS_DIR / "1.png").is_file():
+        return
+    title = (prev.get("title") or "Untitled").strip()
+    panels = prev.get("panels") or []
+    if len(panels) != 3:
+        print(
+            f"Skipping archive: expected 3 panels in meta, got {len(panels)}.",
+            file=sys.stderr,
+        )
+        return
+
+    dest = ARCHIVE_DIR / old_issue
+    dest.mkdir(parents=True, exist_ok=True)
+    for i in (1, 2, 3):
+        src = ASSETS_DIR / f"{i}.png"
+        if src.is_file():
+            shutil.copy2(src, dest / f"{i}.png")
+    (dest / META_NAME).write_text(
+        json.dumps(prev, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+
+    base = (
+        f"https://raw.githubusercontent.com/{owner}/{repo}/"
+        f"{branch}/assets/comic/archive/{old_issue}"
+    )
+    chapter = (
+        f"## {old_issue} — {title}\n\n"
+        f"{comic_strip_table_markdown(base, panels)}"
+        f"---\n\n"
+    )
+    if not COMIC_BOOK.is_file():
+        COMIC_BOOK.write_text(
+            "# Weekly dev comic — archive\n\n"
+            "_See [README](README.md) for the latest strip._\n\n---\n\n",
+            encoding="utf-8",
+        )
+    with COMIC_BOOK.open("a", encoding="utf-8") as f:
+        f.write(chapter)
+    print(f"Archived strip {old_issue} and appended COMIC_BOOK.md.", file=sys.stderr)
 
 
 def replace_delimited_block(readme: str, new_inner: str) -> str:
@@ -407,12 +514,24 @@ def main() -> None:
         print("Set COMIC_FORCE=1 to regenerate anyway.", file=sys.stderr)
         return
 
+    issue_id = current_issue_id()
+    prev_meta = load_latest_meta()
+    if (
+        prev_meta
+        and prev_meta.get("issue")
+        and prev_meta["issue"] != issue_id
+        and (ASSETS_DIR / "1.png").is_file()
+    ):
+        archive_strip_and_append_book(owner, repo, branch, prev_meta)
+
     system_instructions = """You are writing a short funny 3-panel developer comic for a GitHub profile.
 The humor must be grounded ONLY in the JSON stats provided (languages, time, editors). No invented employers or projects.
+
+The main character's appearance is fixed by the project (same person every week): a cartoon developer with NO glasses. Never describe or imply glasses, sunglasses, or eyewear. Refer to them as "the developer" or "they".
+
 Return ONLY valid JSON with this shape:
 {
   "title": "short title",
-  "character_design": "one paragraph, fixed forever for all 3 panels",
   "panels": [
     { "caption": "one line joke for under the image", "image_prompt": "detailed single-panel illustration prompt" },
     { "caption": "...", "image_prompt": "..." },
@@ -420,8 +539,7 @@ Return ONLY valid JSON with this shape:
   ]
 }
 Rules:
-- character_design: ONE dense paragraph naming a single recurring protagonist. Include species (human cartoon), approximate age vibe, hair (color, length, style), face (glasses yes/no, eye style), skin tone as simple cartoon palette, outfit (shirt color, layers), and one memorable prop if any (e.g. coffee mug). This text is copied verbatim into the image generator; be specific so every panel matches.
-- image_prompt: ONLY the action, pose, expression, props, and background for THAT panel. Do NOT redesign or re-describe the character's face, hair, or clothes — refer to them as "the developer" or "they" if needed. Same art direction always: bold black outlines, flat colors, simple background, no readable text in the image, no logos, no real people's faces.
+- image_prompt: ONLY the action, pose, expression, props, and background for THAT panel. Do NOT describe the character's face, hair, clothes, or body type — use "the developer" / "they". No glasses. Art direction: bold black outlines, flat colors, simple background, no readable text in the image, no logos, no real people's faces.
 - Keep captions witty and self-deprecating, PG-rated."""
 
     demo_note = ""
@@ -437,29 +555,48 @@ Rules:
     if len(panels) != 3:
         die(f"Expected 3 panels, got {len(panels)}: {json.dumps(comic)[:800]}")
     title = (comic.get("title") or "This week in code").strip()
-    character_design = (comic.get("character_design") or "").strip()
-    if not character_design:
-        die("Comic plan missing character_design (needed for consistent character).")
+    character_bible = load_character_bible()
+
+    weekly_ref: bytes | None = None
+    if CHARACTER_REFERENCE_FILE.is_file():
+        weekly_ref = CHARACTER_REFERENCE_FILE.read_bytes()
+        if not weekly_ref:
+            weekly_ref = None
 
     ASSETS_DIR.mkdir(parents=True, exist_ok=True)
     style_suffix = (
         " Office/desk developer setting unless the joke needs a tiny background change; "
         "thick black outlines, flat colors, no text or logos in the frame."
     )
-    reference_png: bytes | None = None
+    strip_panel1: bytes | None = None
     for i, p in enumerate(panels, start=1):
         scene = (p.get("image_prompt") or "").strip() + style_suffix
         png = gemini_image_png(
             client,
             IMAGE_MODEL,
             scene_prompt=scene,
-            character_design=character_design if reference_png is None else None,
-            reference_png=reference_png,
+            character_design=character_bible,
+            strip_panel1_png=strip_panel1,
+            weekly_character_png=weekly_ref if strip_panel1 is None else None,
         )
         (ASSETS_DIR / f"{i}.png").write_bytes(png)
         print(f"Wrote panel {i} ({len(png)} bytes)")
-        if reference_png is None:
-            reference_png = png
+        if strip_panel1 is None:
+            strip_panel1 = png
+
+    CHARACTER_REFERENCE_FILE.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(ASSETS_DIR / "1.png", CHARACTER_REFERENCE_FILE)
+    print(f"Updated {CHARACTER_REFERENCE_FILE.name} for next week's continuity.", file=sys.stderr)
+
+    (ASSETS_DIR / META_NAME).write_text(
+        json.dumps(
+            meta_for_write(issue_id, title, panels),
+            indent=2,
+            ensure_ascii=False,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
 
     if not README.exists():
         die(f"Missing {README}")
