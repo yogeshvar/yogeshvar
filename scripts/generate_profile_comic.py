@@ -601,13 +601,13 @@ def main() -> None:
         return
 
     if prev_meta and (ASSETS_DIR / "1.png").is_file():
-        if (prev_meta.get("issue") or "").strip() == issue_id:
+        if prev_issue == issue_id:
             snapshot_outgoing_strip_same_week(issue_id, prev_meta)
 
     if (
         prev_meta
-        and prev_meta.get("issue")
-        and prev_meta["issue"] != issue_id
+        and prev_issue
+        and prev_issue != issue_id
         and (ASSETS_DIR / "1.png").is_file()
     ):
         archive_strip_and_append_book(owner, repo, branch, prev_meta)
