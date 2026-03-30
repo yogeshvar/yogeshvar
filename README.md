@@ -9,18 +9,18 @@ Welcome to my GitHub profile.
 ## This week: a tiny comic
 
 <!-- COMIC_STORY_START -->
-### My First 30 Mins in Dev
+### My First Hour
 
 ![Panel 1](https://raw.githubusercontent.com/yogeshvar/yogeshvar/master/assets/comic/latest/1.png)
 
-*My dev career started strong! Well, for exactly 30 minutes, anyway.*
+*They say the first step is the hardest. For me, it's 100% 'Other'.*
 
 ![Panel 2](https://raw.githubusercontent.com/yogeshvar/yogeshvar/master/assets/comic/latest/2.png)
 
-*Turns out, 40% of my 'coding' is just expertly navigating Stack Overflow.*
+*My main programming language? Oh, just 'Unknown'.*
 
 ![Panel 3](https://raw.githubusercontent.com/yogeshvar/yogeshvar/master/assets/comic/latest/3.png)
 
-*And the other 60%? Crafting Dockerfiles like they're ancient scrolls, all within my trusty Cursor.*
+*After 1 hour of intense 'Unknown' development, I'm ready for a nap.*
 
 <!-- COMIC_STORY_END -->
