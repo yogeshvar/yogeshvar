@@ -503,18 +503,26 @@ def main() -> None:
     payload = json.dumps(facts_clean, indent=2)
     h = hashlib.sha256(payload.encode()).hexdigest()
 
+    issue_id = current_issue_id()
+    prev_meta = load_latest_meta()
+    same_week_as_last_run = (
+        prev_meta is not None
+        and (prev_meta.get("issue") or "").strip() == issue_id
+    )
+    # Only skip when stats match *and* we're still in the same ISO week as meta.json.
+    # Otherwise a new week with identical WakaTime data would exit early and never
+    # archive the previous strip into COMIC_BOOK / assets/comic/archive/.
     if (
         not force
         and not used_placeholder
         and HASH_FILE.exists()
         and HASH_FILE.read_text().strip() == h
+        and same_week_as_last_run
     ):
         print("WakaTime stats unchanged; skipping comic regeneration.")
         print("Set COMIC_FORCE=1 to regenerate anyway.", file=sys.stderr)
         return
 
-    issue_id = current_issue_id()
-    prev_meta = load_latest_meta()
     if (
         prev_meta
         and prev_meta.get("issue")
