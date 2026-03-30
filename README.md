@@ -5,11 +5,11 @@
 ## This week: a tiny comic
 
 <!-- COMIC_STORY_START -->
-### A Week in Code (Maybe)
+### My Coding Life in 20 Hours
 
 | ![Panel 1](https://raw.githubusercontent.com/yogeshvar/yogeshvar/master/assets/comic/latest/1.png) | ![Panel 2](https://raw.githubusercontent.com/yogeshvar/yogeshvar/master/assets/comic/latest/2.png) | ![Panel 3](https://raw.githubusercontent.com/yogeshvar/yogeshvar/master/assets/comic/latest/3.png) |
 |:---:|:---:|:---:|
-| *My coding stats are so mysterious, even I don't know what I'm doing.* | *One hour of 'Other' language in an 'Unknown' editor. Pretty sure I just opened the IDE.* | *Future employers will be thrilled by my mastery of... the unknown.* |
+| *Twenty hours logged this week! Feeling incredibly productive.* | *Mostly Python and Rust, as any respectable dev would focus on.* | *The rest? Four hours spent perfecting my Neovim TOML config, naturally.* |
 
 <!-- COMIC_STORY_END -->
 
