@@ -264,6 +264,46 @@ def fetch_comic_plan(client: genai.Client, user_text: str) -> dict:
     )
 
 
+def _inline_image_bytes(blob: types.Blob) -> bytes | None:
+    """Decode raw image bytes from a response part (handles base64 str or bytes)."""
+    if blob.data is None:
+        return None
+    data = blob.data
+    if isinstance(data, str):
+        data = base64.b64decode(data)
+    else:
+        data = bytes(data)
+    if not data:
+        return None
+    mime = (blob.mime_type or "").lower()
+    if "image" in mime:
+        return data
+    # Some API responses omit mime_type but still return PNG/JPEG/WebP bytes.
+    if data[:8] == b"\x89PNG\r\n\x1a\n":
+        return data
+    if len(data) >= 3 and data[:3] == b"\xff\xd8\xff":
+        return data
+    if len(data) >= 12 and data[:4] == b"RIFF" and data[8:12] == b"WEBP":
+        return data
+    return None
+
+
+def _no_image_error_detail(model: str, resp: types.GenerateContentResponse) -> str:
+    lines = [f"No image in Gemini response (model={model})."]
+    if resp.candidates:
+        c0 = resp.candidates[0]
+        if c0.finish_reason is not None:
+            lines.append(f"finish_reason={c0.finish_reason!r}")
+        parts = (c0.content.parts if c0.content else None) or []
+        for i, p in enumerate(parts):
+            if p.text:
+                snippet = (p.text or "").strip().replace("\n", " ")[:500]
+                lines.append(f"part[{i}].text={snippet!r}")
+    if resp.prompt_feedback is not None:
+        lines.append(f"prompt_feedback={resp.prompt_feedback!r}")
+    return "\n".join(lines)
+
+
 def gemini_image_png(
     client: genai.Client,
     model: str,
@@ -276,8 +316,9 @@ def gemini_image_png(
     image_config = types.ImageConfig(aspect_ratio="1:1")
     if "3.1-flash-image" in model or "3-pro-image" in model:
         image_config.image_size = "1K"
+    # Gemini image docs use TEXT + IMAGE so the model returns an image part reliably.
     config = types.GenerateContentConfig(
-        response_modalities=["IMAGE"],
+        response_modalities=["TEXT", "IMAGE"],
         image_config=image_config,
     )
 
@@ -326,14 +367,11 @@ def gemini_image_png(
     for part in resp.parts or []:
         if part.thought:
             continue
-        if part.inline_data is not None and part.inline_data.data:
-            mime = (part.inline_data.mime_type or "").lower()
-            if "image" in mime:
-                data = part.inline_data.data
-                if isinstance(data, str):
-                    return base64.b64decode(data)
-                return bytes(data)
-    die(f"No image in Gemini response (model={model}).")
+        if part.inline_data is not None:
+            got = _inline_image_bytes(part.inline_data)
+            if got is not None:
+                return got
+    die(_no_image_error_detail(model, resp))
 
 
 def facts_from_wakatime(stats: dict) -> dict:
