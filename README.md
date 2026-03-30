@@ -2,11 +2,6 @@
 
 ## Software Engineer
 
-## Coding activity
-
-<!--START_SECTION:waka-->
-<!--END_SECTION:waka-->
-
 ## This week: a tiny comic
 
 <!-- COMIC_STORY_START -->
