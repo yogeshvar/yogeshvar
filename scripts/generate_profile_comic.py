@@ -358,9 +358,8 @@ def current_issue_id() -> str:
 
 
 def comic_strip_table_markdown(base: str, panels: list[dict]) -> str:
-    """Three-column table: one row of images, one row of captions (GitHub-friendly)."""
+    """Three-column table: images on top, captions below (no 1-2-3 labels)."""
     n = len(panels)
-    num_row = "|" + "|".join(f" **{i}** " for i in range(1, n + 1)) + "|"
     sep_row = "|" + "|".join([":---:"] * n) + "|"
     img_cells: list[str] = []
     cap_cells: list[str] = []
@@ -370,7 +369,7 @@ def comic_strip_table_markdown(base: str, panels: list[dict]) -> str:
         cap_cells.append(f"*{cap}*" if cap else " ")
     img_row = "| " + " | ".join(img_cells) + " |"
     cap_row = "| " + " | ".join(cap_cells) + " |"
-    return "\n".join([num_row, sep_row, img_row, cap_row, ""])
+    return "\n".join([img_row, sep_row, cap_row, ""])
 
 
 def build_readme_block(
