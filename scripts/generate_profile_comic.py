@@ -582,10 +582,8 @@ def main() -> None:
 
     issue_id = current_issue_id()
     prev_meta = load_latest_meta()
-    same_week_as_last_run = (
-        prev_meta is not None
-        and (prev_meta.get("issue") or "").strip() == issue_id
-    )
+    prev_issue = (prev_meta.get("issue") or "").strip() if prev_meta else ""
+    same_week_as_last_run = prev_meta is not None and prev_issue == issue_id
     # Only skip when stats match *and* we're still in the same ISO week as meta.json.
     # Otherwise a new week with identical WakaTime data would exit early and never
     # archive the previous strip into COMIC_BOOK / assets/comic/archive/.
