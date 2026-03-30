@@ -2,8 +2,17 @@ name: Profile comic (WakaTime + Nano Banana)
 
 on:
   schedule:
-    - cron: "0 6 * * 1"
+    - cron: "0 11 * * 1" # Monday 11:00 UTC (~6am US/Eastern standard time)
   workflow_dispatch:
+    inputs:
+      comic_force:
+        description: "Regenerate even when WakaTime stats are unchanged"
+        type: boolean
+        default: false
+      use_placeholder_stats:
+        description: "Skip WakaTime; use random demo stats (testing without real data)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -15,12 +24,29 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout default branch
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scripts/requirements-profile-comic.txt
+
+      - name: Require GEMINI_API_KEY secret
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          if [ -z "${GEMINI_API_KEY}" ]; then
+            echo "::error title=Missing secret::Add repository secret GEMINI_API_KEY (Google AI Studio → API key)."
+            exit 1
+          fi
+
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip && python -m pip install -r scripts/requirements-profile-comic.txt
 
       - name: Generate comic and patch README
         env:
@@ -28,14 +54,23 @@ jobs:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
-          # Optional overrides (see https://ai.google.dev/gemini-api/docs/image-generation):
+          # github.event.inputs only applies to workflow_dispatch; avoid top-level `inputs` on schedule.
+          COMIC_FORCE: ${{ github.event_name == 'workflow_dispatch' && (github.event.inputs.comic_force == true || github.event.inputs.comic_force == 'true') && '1' || '' }}
+          COMIC_USE_PLACEHOLDER: ${{ github.event_name == 'workflow_dispatch' && (github.event.inputs.use_placeholder_stats == true || github.event.inputs.use_placeholder_stats == 'true') && '1' || '' }}
+          # Optional: uncomment to pin models (see https://ai.google.dev/gemini-api/docs/image-generation)
           # GEMINI_TEXT_MODEL: gemini-2.5-flash
           # GEMINI_IMAGE_MODEL: gemini-3.1-flash-image-preview
         run: python scripts/generate_profile_comic.py
 
-      - name: Commit if changed
+      - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md assets/comic/latest/*.png .github/.last_wakatime_hash
-          git diff --staged --quiet || (git commit -m "chore: refresh weekly dev comic" && git push)
+          git add README.md assets/comic/latest/*.png
+          if [ -f .github/.last_wakatime_hash ]; then git add .github/.last_wakatime_hash; fi
+          if git diff --staged --quiet; then
+            echo "No README or comic asset changes to commit."
+          else
+            git commit -m "chore: refresh weekly dev comic"
+            git push
+          fi
