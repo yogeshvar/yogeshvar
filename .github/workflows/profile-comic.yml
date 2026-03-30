@@ -28,7 +28,7 @@ jobs:
     steps:
       - uses: anmol098/waka-readme-stats@v5
         with:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
           SECTION_NAME: waka
           SHOW_LOC_CHART: "False"
