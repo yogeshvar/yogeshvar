@@ -5,11 +5,11 @@
 ## This week: a tiny comic
 
 <!-- COMIC_STORY_START -->
-### The CI Commando
+### A Productive Thirty
 
 | ![Panel 1](https://raw.githubusercontent.com/yogeshvar/yogeshvar/master/assets/comic/latest/1.png) | ![Panel 2](https://raw.githubusercontent.com/yogeshvar/yogeshvar/master/assets/comic/latest/2.png) | ![Panel 3](https://raw.githubusercontent.com/yogeshvar/yogeshvar/master/assets/comic/latest/3.png) |
 |:---:|:---:|:---:|
-| *My coding stats for the week are in! Prepare to be amazed by my productivity.* | *Spent 88% of my time on GitHub Actions YAML, and a solid 12% on Bash. Truly a polyglot.* | *My top editor? The CI Terminal, of course. My code writes itself, apparently.* |
+| *First, some serious infrastructure work in Dockerfile.* | *Next, a crucial contribution from the 'Stack Overflow paste' language.* | *And just like that, the total development time for the week clocked in at 30 minutes.* |
 
 <!-- COMIC_STORY_END -->
 
