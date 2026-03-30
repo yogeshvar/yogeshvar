@@ -95,5 +95,8 @@ jobs:
             echo "No README or comic asset changes to commit."
           else
             git commit -m "chore: refresh weekly dev comic"
+            # Sync with remote (e.g. waka job’s push or other commits) before push.
+            git fetch origin
+            git pull --rebase origin "${{ github.ref_name }}"
             git push
           fi
