@@ -319,25 +319,10 @@ def build_readme_block(
     branch: str,
     title: str,
     panels: list[dict],
-    *,
-    used_placeholder: bool,
 ) -> str:
     base = f"https://raw.githubusercontent.com/{owner}/{repo}/{branch}/assets/comic/latest"
-    if used_placeholder:
-        data_line = (
-            "*Demo run: placeholder dev stats (no WakaTime key, API error, empty week, "
-            "or manual demo mode) + "
-            "[Gemini Nano Banana](https://ai.google.dev/gemini-api/docs/image-generation).*"
-        )
-    else:
-        data_line = (
-            "*Auto-generated from WakaTime + "
-            "[Gemini Nano Banana](https://ai.google.dev/gemini-api/docs/image-generation).*"
-        )
     lines = [
         f"### {title}",
-        "",
-        data_line,
         "",
     ]
     for i, p in enumerate(panels, start=1):
@@ -469,9 +454,7 @@ Rules:
     if not README.exists():
         die(f"Missing {README}")
     readme_body = README.read_text(encoding="utf-8")
-    block = build_readme_block(
-        owner, repo, branch, title, panels, used_placeholder=used_placeholder
-    )
+    block = build_readme_block(owner, repo, branch, title, panels)
     new_readme = replace_delimited_block(readme_body, block)
     README.write_text(new_readme, encoding="utf-8")
 
