@@ -7,11 +7,11 @@ Just another software engineer who loves coding and tinkering with all things te
 ## This week: a tiny comic
 
 <!-- COMIC_STORY_START -->
-### My Configured Life
+### The Documentation Developer
 
 | ![Panel 1](https://raw.githubusercontent.com/yogeshvar/yogeshvar/master/assets/comic/latest/1.png) | ![Panel 2](https://raw.githubusercontent.com/yogeshvar/yogeshvar/master/assets/comic/latest/2.png) | ![Panel 3](https://raw.githubusercontent.com/yogeshvar/yogeshvar/master/assets/comic/latest/3.png) |
 |:---:|:---:|:---:|
-| *Ready to dive deep into Python's elegance and Rust's performance.* | *Who knew 20% of my time would be dedicated to perfecting syntax for a config file?* | *At least my Neovim skills are 100% sharp. And my config files? Impeccable.* |
+| *Prepping for a marathon coding session. Python, TypeScript, here I come!* | *Two hours in, and I've finally perfected the YAML config for my local setup.* | *My GitHub profile says 'developer', but my stats say 'professional README writer'.* |
 
 <!-- COMIC_STORY_END -->
 

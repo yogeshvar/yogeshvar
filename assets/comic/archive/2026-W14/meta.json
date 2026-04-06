@@ -1,0 +1,15 @@
+{
+  "issue": "2026-W14",
+  "title": "My Configured Life",
+  "panels": [
+    {
+      "caption": "Ready to dive deep into Python's elegance and Rust's performance."
+    },
+    {
+      "caption": "Who knew 20% of my time would be dedicated to perfecting syntax for a config file?"
+    },
+    {
+      "caption": "At least my Neovim skills are 100% sharp. And my config files? Impeccable."
+    }
+  ]
+}
