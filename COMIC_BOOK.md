@@ -19,3 +19,10 @@ The [profile README](README.md) shows the **latest** strip. Chapters below list 
 | *Ready to dive deep into Python's elegance and Rust's performance.* | *Who knew 20% of my time would be dedicated to perfecting syntax for a config file?* | *At least my Neovim skills are 100% sharp. And my config files? Impeccable.* |
 ---
 
+## 2026-W15 — The Documentation Developer
+
+| ![Panel 1](https://raw.githubusercontent.com/yogeshvar/yogeshvar/master/assets/comic/archive/2026-W15/1.png) | ![Panel 2](https://raw.githubusercontent.com/yogeshvar/yogeshvar/master/assets/comic/archive/2026-W15/2.png) | ![Panel 3](https://raw.githubusercontent.com/yogeshvar/yogeshvar/master/assets/comic/archive/2026-W15/3.png) |
+|:---:|:---:|:---:|
+| *Prepping for a marathon coding session. Python, TypeScript, here I come!* | *Two hours in, and I've finally perfected the YAML config for my local setup.* | *My GitHub profile says 'developer', but my stats say 'professional README writer'.* |
+---
+

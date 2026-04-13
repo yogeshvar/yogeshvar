@@ -1,0 +1,15 @@
+{
+  "issue": "2026-W15",
+  "title": "The Documentation Developer",
+  "panels": [
+    {
+      "caption": "Prepping for a marathon coding session. Python, TypeScript, here I come!"
+    },
+    {
+      "caption": "Two hours in, and I've finally perfected the YAML config for my local setup."
+    },
+    {
+      "caption": "My GitHub profile says 'developer', but my stats say 'professional README writer'."
+    }
+  ]
+}

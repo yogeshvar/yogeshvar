@@ -1,15 +1,15 @@
 {
-  "issue": "2026-W15",
-  "title": "The Documentation Developer",
+  "issue": "2026-W16",
+  "title": "The Enigma of 'Other'",
   "panels": [
     {
-      "caption": "Prepping for a marathon coding session. Python, TypeScript, here I come!"
+      "caption": "My WakaTime stats say I spent 5 hours and 23 minutes coding this week."
     },
     {
-      "caption": "Two hours in, and I've finally perfected the YAML config for my local setup."
+      "caption": "A solid 4 hours and 45 minutes of that was categorized as 'Other.' Highly specific, very helpful."
     },
     {
-      "caption": "My GitHub profile says 'developer', but my stats say 'professional README writer'."
+      "caption": "Turns out, 'Other' is just my brain buffering while I wait for the next great idea."
     }
   ]
 }
