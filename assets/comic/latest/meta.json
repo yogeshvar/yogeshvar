@@ -1,15 +1,15 @@
 {
-  "issue": "2026-W16",
-  "title": "The Enigma of 'Other'",
+  "issue": "2026-W17",
+  "title": "A Brief Journey Through Code",
   "panels": [
     {
-      "caption": "My WakaTime stats say I spent 5 hours and 23 minutes coding this week."
+      "caption": "Two hours and eight minutes? I swear I was just here!"
     },
     {
-      "caption": "A solid 4 hours and 45 minutes of that was categorized as 'Other.' Highly specific, very helpful."
+      "caption": "My career path: a perfectly balanced three-way tie in 'dabbling'."
     },
     {
-      "caption": "Turns out, 'Other' is just my brain buffering while I wait for the next great idea."
+      "caption": "Ah, the foundational work. So much config, so little actual code."
     }
   ]
 }

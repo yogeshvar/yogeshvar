@@ -7,11 +7,11 @@ Just another software engineer who loves coding and tinkering with all things te
 ## This week: a tiny comic
 
 <!-- COMIC_STORY_START -->
-### The Enigma of 'Other'
+### A Brief Journey Through Code
 
 | ![Panel 1](https://raw.githubusercontent.com/yogeshvar/yogeshvar/master/assets/comic/latest/1.png) | ![Panel 2](https://raw.githubusercontent.com/yogeshvar/yogeshvar/master/assets/comic/latest/2.png) | ![Panel 3](https://raw.githubusercontent.com/yogeshvar/yogeshvar/master/assets/comic/latest/3.png) |
 |:---:|:---:|:---:|
-| *My WakaTime stats say I spent 5 hours and 23 minutes coding this week.* | *A solid 4 hours and 45 minutes of that was categorized as 'Other.' Highly specific, very helpful.* | *Turns out, 'Other' is just my brain buffering while I wait for the next great idea.* |
+| *Two hours and eight minutes? I swear I was just here!* | *My career path: a perfectly balanced three-way tie in 'dabbling'.* | *Ah, the foundational work. So much config, so little actual code.* |
 
 <!-- COMIC_STORY_END -->
 

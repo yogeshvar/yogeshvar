@@ -26,3 +26,10 @@ The [profile README](README.md) shows the **latest** strip. Chapters below list 
 | *Prepping for a marathon coding session. Python, TypeScript, here I come!* | *Two hours in, and I've finally perfected the YAML config for my local setup.* | *My GitHub profile says 'developer', but my stats say 'professional README writer'.* |
 ---
 
+## 2026-W16 — The Enigma of 'Other'
+
+| ![Panel 1](https://raw.githubusercontent.com/yogeshvar/yogeshvar/master/assets/comic/archive/2026-W16/1.png) | ![Panel 2](https://raw.githubusercontent.com/yogeshvar/yogeshvar/master/assets/comic/archive/2026-W16/2.png) | ![Panel 3](https://raw.githubusercontent.com/yogeshvar/yogeshvar/master/assets/comic/archive/2026-W16/3.png) |
+|:---:|:---:|:---:|
+| *My WakaTime stats say I spent 5 hours and 23 minutes coding this week.* | *A solid 4 hours and 45 minutes of that was categorized as 'Other.' Highly specific, very helpful.* | *Turns out, 'Other' is just my brain buffering while I wait for the next great idea.* |
+---
+
