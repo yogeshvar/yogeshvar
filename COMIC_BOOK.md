@@ -33,3 +33,10 @@ The [profile README](README.md) shows the **latest** strip. Chapters below list 
 | *My WakaTime stats say I spent 5 hours and 23 minutes coding this week.* | *A solid 4 hours and 45 minutes of that was categorized as 'Other.' Highly specific, very helpful.* | *Turns out, 'Other' is just my brain buffering while I wait for the next great idea.* |
 ---
 
+## 2026-W17 — A Brief Journey Through Code
+
+| ![Panel 1](https://raw.githubusercontent.com/yogeshvar/yogeshvar/master/assets/comic/archive/2026-W17/1.png) | ![Panel 2](https://raw.githubusercontent.com/yogeshvar/yogeshvar/master/assets/comic/archive/2026-W17/2.png) | ![Panel 3](https://raw.githubusercontent.com/yogeshvar/yogeshvar/master/assets/comic/archive/2026-W17/3.png) |
+|:---:|:---:|:---:|
+| *Two hours and eight minutes? I swear I was just here!* | *My career path: a perfectly balanced three-way tie in 'dabbling'.* | *Ah, the foundational work. So much config, so little actual code.* |
+---
+

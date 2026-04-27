@@ -1,15 +1,15 @@
 {
-  "issue": "2026-W17",
-  "title": "A Brief Journey Through Code",
+  "issue": "2026-W18",
+  "title": "My Weekly Code Report",
   "panels": [
     {
-      "caption": "Two hours and eight minutes? I swear I was just here!"
+      "caption": "Behold, the epic coding marathon of 12 hours and 14 minutes!"
     },
     {
-      "caption": "My career path: a perfectly balanced three-way tie in 'dabbling'."
+      "caption": "Sometimes, exploring new languages feels less like an adventure and more like... well, less."
     },
     {
-      "caption": "Ah, the foundational work. So much config, so little actual code."
+      "caption": "The \"Unknown Editor\" remains the most challenging bug to debug."
     }
   ]
 }
