@@ -92,14 +92,14 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md COMIC_BOOK.md assets/comic/
-          if [ -f .github/.last_wakatime_hash ]; then git add .github/.last_wakatime_hash; fi
+          # -A stages adds and deletes (e.g. clearing .last_wakatime_hash on placeholder runs).
+          git add -A -- README.md COMIC_BOOK.md assets/comic/ .github/.last_wakatime_hash
           if git diff --staged --quiet; then
             echo "No README or comic asset changes to commit."
           else
             git commit -m "chore: refresh weekly dev comic"
-            # Sync with remote (e.g. waka job’s push or other commits) before push.
+            # Sync with remote (commits that landed during the long generate step).
             git fetch origin
-            git pull --rebase origin "${{ github.ref_name }}"
+            git pull --rebase --autostash origin "${{ github.ref_name }}"
             git push
           fi
