@@ -55,6 +55,13 @@ jobs:
     steps:
       - name: Checkout default branch
         uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - name: Sync with remote after waka job
+        run: |
+          git fetch origin "${{ github.event.repository.default_branch }}"
+          git reset --hard "origin/${{ github.event.repository.default_branch }}"
 
       - name: Set up Python
         uses: actions/setup-python@v6
@@ -90,16 +97,33 @@ jobs:
 
       - name: Commit and push if changed
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # -A stages adds and deletes (e.g. clearing .last_wakatime_hash on placeholder runs).
-          git add -A -- README.md COMIC_BOOK.md assets/comic/ .github/.last_wakatime_hash
+          BRANCH="${{ github.event.repository.default_branch }}"
+          # -A stages adds and deletes (e.g. demo run clears .last_wakatime_hash).
+          COMIC_PATHS="README.md COMIC_BOOK.md assets/comic/ .github/.last_wakatime_hash"
+
+          git add -A -- ${COMIC_PATHS}
           if git diff --staged --quiet; then
             echo "No README or comic asset changes to commit."
-          else
-            git commit -m "chore: refresh weekly dev comic"
-            # Sync with remote (commits that landed during the long generate step).
-            git fetch origin
-            git pull --rebase --autostash origin "${{ github.ref_name }}"
-            git push
+            exit 0
           fi
+
+          # Commit once on latest origin: stash comic output, sync, re-apply (no post-commit rebase).
+          git stash push -u -m "weekly-comic" -- ${COMIC_PATHS}
+          git fetch origin "${BRANCH}"
+          git reset --hard "origin/${BRANCH}"
+          if ! git stash pop; then
+            echo "::error::Comic changes conflicted with origin/${BRANCH}." >&2
+            git status
+            exit 1
+          fi
+
+          git add -A -- ${COMIC_PATHS}
+          if git diff --staged --quiet; then
+            echo "No changes after sync with origin/${BRANCH}."
+            exit 0
+          fi
+          git commit -m "chore: refresh weekly dev comic"
+          git push origin "HEAD:${BRANCH}"
