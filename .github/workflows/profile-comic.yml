@@ -102,16 +102,19 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           BRANCH="${{ github.event.repository.default_branch }}"
           # -A stages adds and deletes (e.g. demo run clears .last_wakatime_hash).
-          COMIC_PATHS="README.md COMIC_BOOK.md assets/comic/ .github/.last_wakatime_hash"
+          COMIC_PATHS="README.md COMIC_BOOK.md assets/comic/"
+          HASH_PATH=".github/.last_wakatime_hash"
+          # Stash uses .github/ (not the hash file): pathspec on a deleted file makes stash fail.
+          STASH_PATHS="${COMIC_PATHS} .github/"
 
-          git add -A -- ${COMIC_PATHS}
+          git add -A -- ${COMIC_PATHS} ${HASH_PATH}
           if git diff --staged --quiet; then
             echo "No README or comic asset changes to commit."
             exit 0
           fi
 
           # Commit once on latest origin: stash comic output, sync, re-apply (no post-commit rebase).
-          git stash push -u -m "weekly-comic" -- ${COMIC_PATHS}
+          git stash push -u -m "weekly-comic" -- ${STASH_PATHS}
           git fetch origin "${BRANCH}"
           git reset --hard "origin/${BRANCH}"
           if ! git stash pop; then
@@ -120,7 +123,7 @@ jobs:
             exit 1
           fi
 
-          git add -A -- ${COMIC_PATHS}
+          git add -A -- ${COMIC_PATHS} ${HASH_PATH}
           if git diff --staged --quiet; then
             echo "No changes after sync with origin/${BRANCH}."
             exit 0
