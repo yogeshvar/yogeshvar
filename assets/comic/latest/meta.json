@@ -1,15 +1,15 @@
 {
-  "issue": "2026-W18",
-  "title": "My Weekly Code Report",
+  "issue": "2026-W22",
+  "title": "The Ghost in the Machine",
   "panels": [
     {
-      "caption": "Behold, the epic coding marathon of 12 hours and 14 minutes!"
+      "caption": "My commit history for the week is a testament to my profound dedication... to not coding."
     },
     {
-      "caption": "Sometimes, exploring new languages feels less like an adventure and more like... well, less."
+      "caption": "My WakaTime summary for the week: a perfect zero across all metrics. Peak efficiency achieved!"
     },
     {
-      "caption": "The \"Unknown Editor\" remains the most challenging bug to debug."
+      "caption": "I've mastered the art of not coding in 0 languages, across 0 editors. What's your superpower?"
     }
   ]
 }

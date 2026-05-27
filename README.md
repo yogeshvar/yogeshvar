@@ -7,11 +7,11 @@ Just another software engineer who loves coding and tinkering with all things te
 ## This week: a tiny comic
 
 <!-- COMIC_STORY_START -->
-### My Weekly Code Report
+### The Ghost in the Machine
 
 | ![Panel 1](https://raw.githubusercontent.com/yogeshvar/yogeshvar/master/assets/comic/latest/1.png) | ![Panel 2](https://raw.githubusercontent.com/yogeshvar/yogeshvar/master/assets/comic/latest/2.png) | ![Panel 3](https://raw.githubusercontent.com/yogeshvar/yogeshvar/master/assets/comic/latest/3.png) |
 |:---:|:---:|:---:|
-| *Behold, the epic coding marathon of 12 hours and 14 minutes!* | *Sometimes, exploring new languages feels less like an adventure and more like... well, less.* | *The "Unknown Editor" remains the most challenging bug to debug.* |
+| *My commit history for the week is a testament to my profound dedication... to not coding.* | *My WakaTime summary for the week: a perfect zero across all metrics. Peak efficiency achieved!* | *I've mastered the art of not coding in 0 languages, across 0 editors. What's your superpower?* |
 
 <!-- COMIC_STORY_END -->
 

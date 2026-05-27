@@ -40,3 +40,10 @@ The [profile README](README.md) shows the **latest** strip. Chapters below list 
 | *Two hours and eight minutes? I swear I was just here!* | *My career path: a perfectly balanced three-way tie in 'dabbling'.* | *Ah, the foundational work. So much config, so little actual code.* |
 ---
 
+## 2026-W18 — My Weekly Code Report
+
+| ![Panel 1](https://raw.githubusercontent.com/yogeshvar/yogeshvar/master/assets/comic/archive/2026-W18/1.png) | ![Panel 2](https://raw.githubusercontent.com/yogeshvar/yogeshvar/master/assets/comic/archive/2026-W18/2.png) | ![Panel 3](https://raw.githubusercontent.com/yogeshvar/yogeshvar/master/assets/comic/archive/2026-W18/3.png) |
+|:---:|:---:|:---:|
+| *Behold, the epic coding marathon of 12 hours and 14 minutes!* | *Sometimes, exploring new languages feels less like an adventure and more like... well, less.* | *The "Unknown Editor" remains the most challenging bug to debug.* |
+---
+
