@@ -17,8 +17,6 @@ Just another software engineer who loves coding and tinkering with all things te
 
 *Earlier strips → [COMIC_BOOK.md](COMIC_BOOK.md)*
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-2%2C982%20hrs%2031%20mins-blue?style=flat)
-
 ![Profile Views](http://img.shields.io/badge/Profile%20Views-0-blue?style=flat)
 
 **I'm a Night 🦉** 
@@ -73,7 +71,7 @@ CSS                      5 repos             ██░░░░░░░░░�
 
 
 
- Last Updated on 27/05/2026 00:17:33 UTC
+ Last Updated on 01/06/2026 12:54:20 UTC
 <!--END_SECTION:waka-->
 
 *Earlier strips → [COMIC_BOOK.md](COMIC_BOOK.md)*
