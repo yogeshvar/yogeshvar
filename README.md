@@ -17,7 +17,7 @@ Just another software engineer who loves coding and tinkering with all things te
 
 *Earlier strips → [COMIC_BOOK.md](COMIC_BOOK.md)*
 <!--START_SECTION:waka-->
-![Profile Views](http://img.shields.io/badge/Profile%20Views-3-blue?style=flat)
+![Profile Views](http://img.shields.io/badge/Profile%20Views-0-blue?style=flat)
 
 **I'm a Night 🦉** 
 
@@ -61,17 +61,17 @@ No Activity Tracked This Week
 **I Mostly Code in TypeScript** 
 
 ```text
-TypeScript               17 repos            ████████░░░░░░░░░░░░░░░░░   32.08 % 
-Python                   9 repos             ████░░░░░░░░░░░░░░░░░░░░░   16.98 % 
-JavaScript               9 repos             ████░░░░░░░░░░░░░░░░░░░░░   16.98 % 
-Jupyter Notebook         5 repos             ██░░░░░░░░░░░░░░░░░░░░░░░   09.43 % 
-CSS                      5 repos             ██░░░░░░░░░░░░░░░░░░░░░░░   09.43 % 
+TypeScript               17 repos            ████████░░░░░░░░░░░░░░░░░   31.48 % 
+Python                   10 repos            █████░░░░░░░░░░░░░░░░░░░░   18.52 % 
+JavaScript               9 repos             ████░░░░░░░░░░░░░░░░░░░░░   16.67 % 
+Jupyter Notebook         5 repos             ██░░░░░░░░░░░░░░░░░░░░░░░   09.26 % 
+CSS                      5 repos             ██░░░░░░░░░░░░░░░░░░░░░░░   09.26 % 
 ```
 
 
 
 
- Last Updated on 29/06/2026 12:33:14 UTC
+ Last Updated on 06/07/2026 12:19:57 UTC
 <!--END_SECTION:waka-->
 
 *Earlier strips → [COMIC_BOOK.md](COMIC_BOOK.md)*
