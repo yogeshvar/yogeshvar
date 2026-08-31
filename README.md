@@ -17,7 +17,7 @@ Just another software engineer who loves coding and tinkering with all things te
 
 *Earlier strips → [COMIC_BOOK.md](COMIC_BOOK.md)*
 <!--START_SECTION:waka-->
-![Profile Views](http://img.shields.io/badge/Profile%20Views-1-blue?style=flat)
+![Profile Views](http://img.shields.io/badge/Profile%20Views-0-blue?style=flat)
 
 **I'm a Night 🦉** 
 
@@ -77,7 +77,7 @@ Ruby                     1 repo              ░░░░░░░░░░░�
 
 
 
- Last Updated on 24/08/2026 11:20:21 UTC
+ Last Updated on 31/08/2026 17:48:55 UTC
 <!--END_SECTION:waka-->
 
 *Earlier strips → [COMIC_BOOK.md](COMIC_BOOK.md)*
